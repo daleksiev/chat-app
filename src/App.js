@@ -1,8 +1,8 @@
 import { Menu } from 'antd';
-import styles from './App.module.scss';
 import items from './navItems';
 import routes from './routes';
 import { Routes, Route } from 'react-router-dom'
+import styles from './App.module.scss';
 
 function App() {
     return (

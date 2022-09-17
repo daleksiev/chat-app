@@ -20,7 +20,14 @@ const allPagesItems = [
     ...authPages
 ].map(item => {
     if (typeof item === 'object') {
-        return { ...item, label: <Link to={`/${item.link}`}>{item.label}</Link> }
+        return {
+            ...item,
+            label: (
+                <Link to={`/${item?.link ? item.link : item.label.toLowerCase()}`}>
+                    {item.label}
+                </Link>
+            )
+        }
     }
 
     return { label: <Link to={`/${item.toLowerCase()}`}>{item}</Link>, key: item.toLowerCase() }
